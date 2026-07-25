@@ -11,7 +11,7 @@ Keep the system small and domain-oriented:
 - durable files hold only state that domain genuinely needs;
 - deterministic commands exist only where a repository has a concrete repeatability or
   safety need;
-- integration-specific allow-rules permit those narrow commands, never unrestricted tools.
+- agent-client approval rules narrowly permit installed workflow tools.
 
 Prefer model judgment. Add procedures, durable state, and deterministic tools only for a
 concrete project need.

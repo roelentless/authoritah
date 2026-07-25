@@ -12,18 +12,33 @@ _workflow/
 └── <domain>/
 ```
 
-Each directory is a domain boundary. Its `AGENTS.md` frames the domain's purpose, ownership,
-boundaries, and judgment. Related state, handoffs, and deterministic tools stay beside that
-framing. The framing should be sufficient for a capable model to reason; encode a rigid
-procedure only where mistakes would be costly. Each project creates only the domains its work
-requires.
+For example, one repository may organize a human domain and an asynchronous design process:
+
+```text
+_workflow/
+├── roel/
+│   ├── AGENTS.md
+│   └── proposals/
+└── design-iteration/
+    ├── AGENTS.md
+    ├── next/
+    └── handoffs/
+```
+
+Each top-level directory is a domain boundary. Its `AGENTS.md` frames the domain's purpose,
+ownership, boundaries, and judgment. Related state, handoffs, and deterministic tools stay
+inside that domain. The framing should be sufficient for a capable model to reason; encode a
+rigid procedure only where mistakes would be costly. Each project creates only the domains
+its work requires.
 
 Human domains use stable usernames. For example, `_workflow/roel/` belongs to
 `roel`; its `AGENTS.md` carries Roel's working framing. This identity remains stable as teams
 grow.
 
 Precise naming is a core workflow property. Every domain, state file, and concept must say
-exactly who or what owns it. A reader should not need local history to interpret a name.
+exactly who or what owns it. Name things as the people working in the repository name them,
+using the project's own vocabulary. A reader should not need local history to interpret a
+name.
 
 ## Primitives
 
@@ -35,15 +50,9 @@ context relevant to their work.
 
 ### Working state
 
-Store each fact once in the domain that owns it:
-
-- a person's backlog and evolving proposals may live beneath that username's domain;
-- confirmed executable work may have a dedicated todo domain;
-- exploratory evidence may belong to a researcher domain;
-- unsent and immutable design exchanges may belong to a design-iteration domain.
-
-Delete completed state. Preserve history only when it remains evidence or an immutable
-external exchange.
+Store each fact once in the domain that owns the decision or action it informs. Use the
+project's vocabulary for state files. Keep active state and immutable external exchanges;
+remove completed working state.
 
 ### Deterministic tools
 
@@ -51,10 +60,9 @@ Use a command when safety or repeatability requires less freedom than prose prov
 command must validate its inputs and have one narrow responsibility. Allow-list that command,
 not the unrestricted capability beneath it.
 
-The optional [`checkpoint/create`](checkpoint/create) command demonstrates the pattern. Setup
-may install it when a repository wants safe checkpoint creation. It accepts explicit files,
-refuses a pre-populated Git index, and can therefore be approved without allowing arbitrary
-commits.
+The included [`checkpoint/create`](checkpoint/create) command is one optional example. It
+accepts explicit files, refuses a pre-populated Git index, and can therefore be approved
+without allowing arbitrary commits.
 
 ### Asynchronous handoffs
 
@@ -78,6 +86,3 @@ implementation truth and the original request, then return remaining work to `ne
 Add a domain when related work has distinct ownership or context. Give it one clearly named
 directory and a concise `AGENTS.md`. Add durable state or tools only when that domain has a
 concrete need for them.
-
-Setup begins by discovering the repository's people, agents, processes, and external
-collaborators. The resulting domains use the project's own precise vocabulary.
