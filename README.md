@@ -14,5 +14,5 @@ Read [WORKFLOW.md](WORKFLOW.md) for the model.
 Ask a coding agent:
 
 ```text
-Use $init-workflow to initialize _workflow in this repository.
+Use the init-workflow skill to initialize _workflow in this repository.
 ```
