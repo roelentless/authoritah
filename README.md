@@ -11,15 +11,8 @@ Read [WORKFLOW.md](WORKFLOW.md) for the model.
 
 ## Initialize a repository
 
-Ask Codex:
+Ask a coding agent:
 
 ```text
-Use $init-workflow to initialize the reusable _workflow system in this repository.
+Use $init-workflow to initialize _workflow in this repository.
 ```
-
-The skill first inspects the repository, then proposes and creates only the workflow domains,
-state, and narrow tools that fit that project. It does not copy a fixed template.
-
-Setup can install [`checkpoint/create`](checkpoint/create) when a repository wants safe,
-explicit checkpoint creation. It is an optional example of a narrowly allow-listed workflow
-tool.
