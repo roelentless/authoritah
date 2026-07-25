@@ -1,5 +1,5 @@
 ---
-name: init-workflow
+name: init-domain-framed-workflow
 description: Establish a project-specific Domain-Framed Agentic Workflow from its people, agents, processes, external collaborators, and working state.
 disable-model-invocation: true
 ---
