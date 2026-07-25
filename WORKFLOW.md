@@ -15,10 +15,10 @@ state belongs there, and when an agent should ignore it. The framing should be s
 a capable model to reason; encode a rigid procedure only where mistakes would be costly.
 No particular directory is required.
 
-During setup, read the user's identity and working framing from `~/.agents/AGENTS.md`. Name a
-human role after the actual person—for example, `roel/`—rather than using an ambiguous
-substitute such as `owner/`, `user/`, or `project-manager/`. The global file should state the
-person's name; ask the person when it does not.
+Human roles use stable usernames as directory names. For example, `_workflow/roel/` belongs
+to the user `roel`; that directory's `AGENTS.md` carries the person's full framing. Username
+identity remains explicit when several people participate in the same repository, unlike
+generic labels such as `owner`, `user`, or `project-manager`.
 
 Precise naming is a core workflow property. Every role, process, state file, and concept must
 say exactly who or what owns it. A reader should not need local history to interpret a name.
@@ -35,7 +35,7 @@ process into every agent's context.
 
 Store each fact once with the role that owns it:
 
-- a person's backlog and evolving proposals may live beneath that person's role;
+- a person's backlog and evolving proposals may live beneath that username's role;
 - confirmed executable work may have a dedicated todo process;
 - exploratory evidence may belong to a researcher role;
 - unsent and immutable design exchanges may belong to a design-iteration process.

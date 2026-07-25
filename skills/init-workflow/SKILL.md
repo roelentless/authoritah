@@ -11,14 +11,14 @@ system concepts before proposing a structure.
 
 ## Procedure
 
-1. Read `~/.agents/AGENTS.md`. Record the user's stated name and working framing. Ask the user
-   for the missing identity before continuing when that file does not name them.
+1. Read `~/.agents/AGENTS.md`. Record the user's stable username and working framing. Ask the
+   user for the missing username before continuing when that file does not state it.
 2. Read the target repository's root guidance, structure, current planning files, proposals,
    research, handoffs, and existing tools.
 3. Identify the distinct people, roles, and recurring processes that need their own context
    or working state.
-4. Name every role, process, state file, and concept explicitly and without ambiguity. Name a
-   human role after the actual person rather than `owner`, `user`, or `project-manager`.
+4. Name every role, process, state file, and concept explicitly and without ambiguity. Name
+   each human role by its stable username rather than `owner`, `user`, or `project-manager`.
 5. Discuss the proposed `_workflow/` ownership map with the user when it would move existing
    state, replace conventions, or introduce a new process.
 6. Create one directory per accepted role or process. Give each a concise `AGENTS.md` that

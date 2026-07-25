@@ -17,6 +17,6 @@ Prefer model judgment over templates and procedural state machines. Do not add g
 installers, lifecycle databases, completion ledgers, generic orchestration, or a hierarchy
 of explanatory documents.
 
-Use explicit, clear, non-ambiguous names for roles, framing, state, and concepts. Name human
-roles after the actual person when their identity owns the boundary. Never make readers infer
-who a generic `owner`, `user`, or `project-manager` directory represents.
+Use explicit, clear, non-ambiguous names for roles, framing, state, and concepts. Name every
+human role by the person's stable username. Never make readers infer who a generic `owner`,
+`user`, or `project-manager` directory represents.
