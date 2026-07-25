@@ -6,3 +6,5 @@ pre-populated index so unrelated changes cannot enter the checkpoint.
 
 Keep the command POSIX-compatible and repository-agnostic. Do not overlap checkpoint
 creation: the Git index is process-global.
+
+Keep `_SETUP.md` aligned with the tool's installation contract.

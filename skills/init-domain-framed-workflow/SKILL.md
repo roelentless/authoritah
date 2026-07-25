@@ -22,11 +22,11 @@ Apply Domain-Framed Agentic Workflow to the repository's real work. Read
    a concise `AGENTS.md` covering purpose, ownership, boundaries, and when agents should
    ignore it. Colocate each domain's active authoritative state. Keep a person's proposals in
    that person's domain. Model external collaboration with immutable asynchronous request and
-   response handoffs.
+   response handoffs. Keep portable installation guidance in that domain's `_SETUP.md`.
 5. Present deterministic workflow tools separately. Install only accepted tools beside their
-   owning domain. `../../tools/checkpoint/create` is the optional checkpointing example.
-   Validate tool inputs, preserve required file attributes, and maintain narrow agent-client
-   approval rules for installed tools.
+   owning domain. `../../tools/checkpoint/` is the optional checkpointing example; follow its
+   `_SETUP.md`. Validate tool inputs, preserve required file attributes, and maintain narrow
+   agent-client approval rules for installed tools.
 6. Add a short domain map to the repository's root guidance while keeping detailed framing
    local.
 7. Validate links, executable tools, approval rules, and domain ownership. Report the

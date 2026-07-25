@@ -31,6 +31,9 @@ inside that domain. The framing should be sufficient for a capable model to reas
 rigid procedure only where mistakes would be costly. Each project creates only the domains
 its work requires.
 
+A portable domain keeps its installation contract in `_SETUP.md`. The setup contract is
+agent-neutral and stays beside the framing and resources it installs.
+
 Human domains use stable usernames. For example, `_workflow/roel/` belongs to
 `roel`; its `AGENTS.md` carries Roel's working framing. This identity remains stable as teams
 grow.
