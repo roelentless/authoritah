@@ -1,6 +1,6 @@
 ---
 name: init-workflow
-description: Assess a Git repository and establish a project-specific `_workflow` system using role-scoped agent guidance, clearly owned working state, asynchronous handoffs, and narrowly allow-listed tools where useful. Use when a user asks to set up, bootstrap, adopt, or port the workflow approach into a repository.
+description: Establish a project-specific `_workflow` system from the repository's people, roles, processes, and working state.
 disable-model-invocation: true
 ---
 
@@ -11,14 +11,14 @@ system concepts before proposing a structure.
 
 ## Procedure
 
-1. Read `~/.agents/AGENTS.md`. Record the user's stable username and working framing. Ask the
-   user for the missing username before continuing when that file does not state it.
+1. Read `~/.agents/AGENTS.md`. Use the stable username and working framing defined there.
+   Stop and ask the user when either is missing.
 2. Read the target repository's root guidance, structure, current planning files, proposals,
    research, handoffs, and existing tools.
 3. Identify the distinct people, roles, and recurring processes that need their own context
    or working state.
 4. Name every role, process, state file, and concept explicitly and without ambiguity. Name
-   each human role by its stable username rather than `owner`, `user`, or `project-manager`.
+   each human role directory by its stable username.
 5. Discuss the proposed `_workflow/` ownership map with the user when it would move existing
    state, replace conventions, or introduce a new process.
 6. Create one directory per accepted role or process. Give each a concise `AGENTS.md` that
@@ -26,7 +26,7 @@ system concepts before proposing a structure.
 7. Keep a person's evolving ideas and requirements as proposals within that person's role.
    Treat proposals as context, not current behavior or accepted implementation contracts.
 8. Move or create only the durable state each role genuinely owns. Preserve active work and
-   avoid placeholders, duplicated truth, completion history, and generic documentation.
+   keep one authoritative location for each fact.
 9. Add a deterministic tool only when the repository has a concrete safety or repeatability
    need. Use `../../checkpoint/create` as the reference for safe checkpoint commits. Validate
    tool inputs, keep each tool narrow, and add the matching agent-client allow-rule.
@@ -35,5 +35,4 @@ system concepts before proposing a structure.
 11. Validate links, executable tools, allow-rules, and the resulting ownership boundaries.
    Report the decisions and unresolved migrations.
 
-Never overwrite or mechanically merge an existing `_workflow/`. Setup is contextual work,
-not template installation.
+When `_workflow/` already exists, stop and propose a contextual migration before editing it.

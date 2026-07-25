@@ -13,10 +13,8 @@ Keep the system small and role-oriented:
   safety need;
 - integration-specific allow-rules permit those narrow commands, never unrestricted tools.
 
-Prefer model judgment over templates and procedural state machines. Do not add generic
-installers, lifecycle databases, completion ledgers, generic orchestration, or a hierarchy
-of explanatory documents.
+Prefer model judgment. Add procedures, durable state, and deterministic tools only for a
+concrete project need.
 
 Use explicit, clear, non-ambiguous names for roles, framing, state, and concepts. Name every
-human role by the person's stable username. Never make readers infer who a generic `owner`,
-`user`, or `project-manager` directory represents.
+human role directory by the person's stable username.

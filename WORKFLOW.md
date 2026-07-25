@@ -6,19 +6,18 @@ The workflow is an open-ended directory of roles and processes inside a reposito
 
 ```text
 _workflow/
-├── <person-or-role>/
+├── <username-or-role>/
 └── <recurring-process>/
 ```
 
 Each directory is an ownership boundary. Its `AGENTS.md` explains why the role exists, what
 state belongs there, and when an agent should ignore it. The framing should be sufficient for
 a capable model to reason; encode a rigid procedure only where mistakes would be costly.
-No particular directory is required.
+Each project creates only the roles and processes its work requires.
 
-Human roles use stable usernames as directory names. For example, `_workflow/roel/` belongs
-to the user `roel`; that directory's `AGENTS.md` carries the person's full framing. Username
-identity remains explicit when several people participate in the same repository, unlike
-generic labels such as `owner`, `user`, or `project-manager`.
+Human role directories use stable usernames. For example, `_workflow/roel/` belongs to
+`roel`; its `AGENTS.md` carries Roel's working framing. This identity remains stable as teams
+grow.
 
 Precise naming is a core workflow property. Every role, process, state file, and concept must
 say exactly who or what owns it. A reader should not need local history to interpret a name.
@@ -75,5 +74,5 @@ Add a role only when work has distinct ownership or context that should not be l
 everywhere. Give it one clearly named directory and a concise `AGENTS.md`. Add durable state
 or tools only when that role has a concrete need for them.
 
-Setup begins by discovering the repository's people and processes. Avoid empty ceremony and
-universal vocabulary that erases how a project actually works.
+Setup begins by discovering the repository's people and processes. The resulting structure
+uses the project's own precise vocabulary.
