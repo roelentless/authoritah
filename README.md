@@ -20,5 +20,6 @@ Use $init-workflow to initialize the reusable _workflow system in this repositor
 The skill first inspects the repository, then proposes and creates only the workflow domains,
 state, and narrow tools that fit that project. It does not copy a fixed template.
 
-[`checkpoint/create`](checkpoint/create) is the reference implementation for repositories
-that need safe, explicit checkpoint commits.
+Setup can install [`checkpoint/create`](checkpoint/create) when a repository wants safe,
+explicit checkpoint creation. It is an optional example of a narrowly allow-listed workflow
+tool.

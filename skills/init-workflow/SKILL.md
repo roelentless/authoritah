@@ -28,8 +28,10 @@ Apply Domain-Framed Agentic Workflow to the repository's real work. Read
 8. Move or create only the durable state each domain genuinely owns. Preserve active work and
    keep one authoritative location for each fact.
 9. Add a deterministic tool only when the repository has a concrete safety or repeatability
-   need. Use `../../checkpoint/create` as the reference for safe checkpoint commits. Validate
-   tool inputs, keep each tool narrow, and add the matching agent-client allow-rule.
+   need. Offer checkpointing as an optional tool. When accepted, install
+   `../../checkpoint/create` as `_workflow/checkpoint/create`, preserve its executable bit,
+   and add the matching agent-client allow-rule. Validate every tool's inputs and keep its
+   responsibility narrow.
 10. Update root agent guidance with a short map to the workflow domains and their authoritative
    files. Keep detailed framing local.
 11. Validate links, executable tools, allow-rules, and the resulting domain boundaries.

@@ -1,8 +1,8 @@
 # Domain-Framed Agentic Workflow — agent guidance
 
 This repository owns the portable Domain-Framed Agentic Workflow system. Read
-[WORKFLOW.md](WORKFLOW.md) before changing its structure. `checkpoint/create` is the only
-executable shipped by the project.
+[WORKFLOW.md](WORKFLOW.md) before changing its structure. `checkpoint/create` is an optional
+reference tool for safe checkpoint creation.
 
 Keep the system small and domain-oriented:
 

@@ -51,9 +51,10 @@ Use a command when safety or repeatability requires less freedom than prose prov
 command must validate its inputs and have one narrow responsibility. Allow-list that command,
 not the unrestricted capability beneath it.
 
-The included [`checkpoint/create`](checkpoint/create) command demonstrates the pattern: it
-accepts explicit files, refuses a pre-populated Git index, and can therefore be approved
-without allowing arbitrary commits.
+The optional [`checkpoint/create`](checkpoint/create) command demonstrates the pattern. Setup
+may install it when a repository wants safe checkpoint creation. It accepts explicit files,
+refuses a pre-populated Git index, and can therefore be approved without allowing arbitrary
+commits.
 
 ### Asynchronous handoffs
 
