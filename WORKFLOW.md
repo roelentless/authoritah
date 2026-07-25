@@ -4,7 +4,7 @@
 
 The workflow organizes work like modular code: related concepts live together in the domain
 that owns them. A domain may represent a person, a local or remote coding agent, a recurring
-process, or an external collaborator.
+process, or an external human or programmatic collaborator.
 
 ```text
 _workflow/
@@ -57,8 +57,9 @@ without allowing arbitrary commits.
 
 ### Asynchronous handoffs
 
-An external teammate receives its own domain and exchanges work asynchronously. Design work
-is grouped into iterations:
+An external human or programmatic collaborator receives its own domain. Work crosses that
+boundary through immutable request and response handoffs, allowing both sides to continue
+asynchronously. Design work is grouped into iterations:
 
 ```text
 handoffs/iteration-N/

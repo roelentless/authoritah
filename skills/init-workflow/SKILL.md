@@ -1,6 +1,6 @@
 ---
 name: init-workflow
-description: Establish a project-specific Domain-Framed Agentic Workflow from its people, agents, processes, collaborators, and working state.
+description: Establish a project-specific Domain-Framed Agentic Workflow from its people, agents, processes, external collaborators, and working state.
 disable-model-invocation: true
 ---
 
@@ -16,7 +16,7 @@ Apply Domain-Framed Agentic Workflow to the repository's real work. Read
 2. Read the target repository's root guidance, structure, current planning files, proposals,
    research, handoffs, and existing tools.
 3. Identify the people, local or remote coding agents, recurring processes, and external
-   collaborators whose related framing and state form distinct domains.
+   human or programmatic collaborators whose related framing and state form distinct domains.
 4. Name every domain, state file, and concept explicitly and without ambiguity. Name each
    human domain directory by its stable username.
 5. Discuss the proposed `_workflow/` ownership map with the user when it would move existing
