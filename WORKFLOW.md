@@ -60,9 +60,9 @@ Use a command when safety or repeatability requires less freedom than prose prov
 command must validate its inputs and have one narrow responsibility. Allow-list that command,
 not the unrestricted capability beneath it.
 
-The included [`checkpoint/create`](checkpoint/create) command is one optional example. It
-accepts explicit files, refuses a pre-populated Git index, and can therefore be approved
-without allowing arbitrary commits.
+The included [`tools/checkpoint/create`](tools/checkpoint/create) command is one optional
+example. It accepts explicit files, refuses a pre-populated Git index, and can therefore be
+approved without allowing arbitrary commits.
 
 ### Asynchronous handoffs
 
