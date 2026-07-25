@@ -1,0 +1,46 @@
+#!/bin/sh
+set -eu
+
+if [ "$#" -lt 2 ]; then
+  echo "usage: _workflow/checkpoint/create <message> <file> [file ...]" >&2
+  exit 2
+fi
+
+message=$1
+shift
+
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+
+if [ -n "$(git diff --cached --name-only)" ]; then
+  echo "checkpoint refused: the index already contains staged changes" >&2
+  exit 1
+fi
+
+for path in "$@"; do
+  case "$path" in
+    -*|/*|..|../*|*/../*|*'*'*|*'?'*|*'['*)
+      echo "checkpoint refused unsafe path: $path" >&2
+      exit 1
+      ;;
+  esac
+
+  if [ -d "$path" ]; then
+    echo "checkpoint requires explicit files, not directories: $path" >&2
+    exit 1
+  fi
+
+  if [ ! -e "$path" ] && ! git ls-files --error-unmatch -- "$path" >/dev/null 2>&1; then
+    echo "checkpoint path does not exist and is not tracked: $path" >&2
+    exit 1
+  fi
+done
+
+git add -- "$@"
+
+if git diff --cached --quiet; then
+  echo "checkpoint has no staged changes" >&2
+  exit 1
+fi
+
+git commit -m "$message"
