@@ -1,13 +1,13 @@
 ---
-name: init-domain-framed-workflow
-description: Establish a project-specific Domain-Framed Agentic Workflow from its people, agents, processes, external collaborators, and working state.
+name: init-authoritah
+description: Initialize Authoritah from a repository's owners, collaborators, processes, and working state.
 disable-model-invocation: true
 ---
 
-# Initialize workflow
+# Initialize Authoritah
 
-Apply Domain-Framed Agentic Workflow to the repository's real work. Read
-`../../WORKFLOW.md` for the system concepts before proposing a structure.
+Apply Authoritah to the repository's real work. Read `../../WORKFLOW.md` for the system
+concepts before proposing a structure.
 
 ## Procedure
 

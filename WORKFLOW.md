@@ -1,10 +1,13 @@
-# Domain-Framed Agentic Workflow
+# Authoritah
+
+*Respect the domain.*
 
 ## Model
 
-The workflow organizes work like modular code: related concepts live together in the domain
-that owns them. A domain may represent a person, a local or remote coding agent, a recurring
-process, or an external human or programmatic collaborator.
+Authoritah organizes responsibility like modular code: related concepts live together in the
+domain that owns them. Each domain defines clear ownership, bounded authority, and the
+context needed to exercise judgment. A domain may represent a person, a local or remote
+coding agent, a recurring process, or an external human or programmatic collaborator.
 
 ```text
 _workflow/
@@ -30,6 +33,10 @@ ownership, boundaries, and judgment. Related state, handoffs, and deterministic 
 inside that domain. The framing should be sufficient for a capable model to reason; encode a
 rigid procedure only where mistakes would be costly. Each project creates only the domains
 its work requires.
+
+Responsibility remains with the domain that owns the outcome. Delegation gives another
+domain a defined task and the authority needed to act without obscuring that ownership. Work
+crossing a domain boundary carries the context and constraints its recipient needs.
 
 A portable domain keeps its installation contract in `_SETUP.md`. The setup contract is
 agent-neutral and stays beside the framing and resources it installs.

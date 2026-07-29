@@ -1,10 +1,10 @@
-# Domain-Framed Agentic Workflow — agent guidance
+# Authoritah — agent guidance
 
-This repository owns the portable Domain-Framed Agentic Workflow system. Read
-[WORKFLOW.md](WORKFLOW.md) before changing its structure. `tools/checkpoint/create` is an
-optional reference tool for safe checkpoint creation.
+This repository owns Authoritah, the portable responsibility-driven workflow for human and
+agentic work. Read [WORKFLOW.md](WORKFLOW.md) before changing its structure.
+`tools/checkpoint/create` is an optional reference tool for safe checkpoint creation.
 
-Keep the system small and domain-oriented:
+Keep the system small and responsibility-driven:
 
 - each domain owns one directory;
 - its nearest `AGENTS.md` frames purpose, ownership, boundaries, and judgment;

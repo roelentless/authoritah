@@ -1,11 +1,14 @@
-# Domain-Framed Agentic Workflow
+# Authoritah
 
-A small, portable system for organizing human and agentic work by domain.
+*Respect the domain.*
 
+A small, portable, responsibility-driven workflow for human and agentic work.
+
+Authoritah gives every domain clear ownership, bounded authority, and explicit delegation.
 Each domain colocates its framing and state, plus any handoffs or deterministic tools it
 needs. Domains can represent people, coding agents, recurring processes, or external human
-and programmatic collaborators. Agents load the context for the domain they are working in
-instead of one global workflow manual.
+and programmatic collaborators. Agents load only the context for the domain they are working
+in.
 
 Read [WORKFLOW.md](WORKFLOW.md) for the model.
 
@@ -14,5 +17,5 @@ Read [WORKFLOW.md](WORKFLOW.md) for the model.
 Ask a coding agent:
 
 ```text
-Use the init-domain-framed-workflow skill to initialize _workflow in this repository.
+Use the init-authoritah skill to initialize _workflow in this repository.
 ```
