@@ -2,7 +2,8 @@
 
 *Respect the domain.*
 
-A small, portable, responsibility-driven workflow for human and agentic work.
+A small, portable workflow for structuring responsibility around the coding agents you
+already use.
 
 Authoritah gives every domain clear ownership, bounded authority, and explicit delegation.
 Each domain colocates its framing and state, plus any handoffs or deterministic tools it
