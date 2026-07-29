@@ -26,3 +26,8 @@ Ask a coding agent:
 ```text
 Use the init-authoritah skill to initialize _workflow in this repository.
 ```
+
+## Notes
+
+The name is a nod to Cartman's
+["Respect my authoritah!"](https://www.youtube.com/watch?v=NiiUQKFz3HU).
