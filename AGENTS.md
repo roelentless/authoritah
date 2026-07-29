@@ -5,6 +5,8 @@ agents in a normal development workflow. Read [WORKFLOW.md](WORKFLOW.md) before 
 structure. `tools/checkpoint/create` is an optional reference tool for safe checkpoint
 creation.
 
+Authoritah is the system name. Use `_workflow/` as its installed project directory.
+
 Keep the system small and responsibility-driven:
 
 - each domain owns one directory;
