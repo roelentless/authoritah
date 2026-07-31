@@ -1,4 +1,4 @@
-# Workflow model
+# Authoritah workflow model
 
 ## Model
 
