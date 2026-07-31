@@ -11,11 +11,9 @@ a structure.
 
 ## Procedure
 
-1. Ask the user for their stable username. Require a lowercase slug made of letter and digit
-   groups separated by single hyphens; do not infer or default it. Then read
-   `~/.agents/AGENTS.md` and the target repository's guidance, structure, working state,
-   handoffs, tools, and agent-client configuration. Use any working framing found in the
-   global guidance; ask the user when it is absent.
+1. Read `~/.agents/AGENTS.md`, then read the target repository's guidance, structure, working
+   state, handoffs, tools, and agent-client configuration. Use the stable username and working
+   framing from the global guidance; ask the user when either is absent.
 2. Define the repository's domains in its own vocabulary. Consider its people, local and
    remote coding agents, recurring processes, and external human or programmatic
    collaborators. Name human domains by stable username.
