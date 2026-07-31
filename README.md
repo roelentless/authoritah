@@ -1,6 +1,6 @@
-# Authoritah
+![Authoritah header](assets/886be605-1dfc-417f-b1e3-013d287e4579.jpg)
 
-*Respect the domain.*
+# Authoritah
 
 A small, portable way to structure responsibility around the (coding) agents in your normal
 development workflow.
@@ -29,7 +29,6 @@ Ask a coding agent:
 Use the init-authoritah skill to initialize _workflow in this repository.
 ```
 
-## Notes
+## License
 
-The name is a nod to Cartman's
-["Respect my authoritah!"](https://www.youtube.com/watch?v=NiiUQKFz3HU).
+[Apache License 2.0](LICENSE)
