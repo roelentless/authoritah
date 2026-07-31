@@ -10,8 +10,8 @@ It is a generic way of working, without harness tooling.
 Reason about that workflow naturally, in terms of the people, responsibilities, boundaries,
 and handoffs already present.
 
-It looks surprisingly simple, but I've had great results using it to improve agentic
-development and keep processes cleanly organized.
+With clear prompting, this surprisingly simple structure can yield cleaner, better-organized
+agentic development processes.
 
 Authoritah gives every domain clear ownership, bounded authority, and explicit delegation.
 Each domain colocates its framing and state, plus any handoffs or deterministic tools it
