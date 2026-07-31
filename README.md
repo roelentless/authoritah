@@ -12,11 +12,9 @@ and handoffs already present.
 With clear prompting, this surprisingly simple structure can yield cleaner, better-organized
 agentic development processes.
 
-Authoritah gives every domain clear ownership, bounded authority, and explicit delegation.
-Each domain colocates its framing and state, plus any handoffs or deterministic tools it
-needs. Domains can represent people, coding agents, recurring processes, or external human
-and programmatic collaborators. Agents load only the context for the domain they are working
-in.
+Authoritah keeps related development context together in clearly named directories, called
+domains. Each domain holds the instructions, working state, handoffs, and optional tools for
+one part of the workflow, so coding agents load only what is relevant.
 
 Read the [workflow model](skills/init-authoritah/references/WORKFLOW.md).
 
