@@ -17,7 +17,7 @@ For example, one repository may organize a human domain and an asynchronous desi
 
 ```text
 _workflow/
-├── roel/
+├── <username>/
 │   ├── AGENTS.md
 │   └── proposals/
 └── design-iteration/
@@ -39,9 +39,9 @@ needs. This keeps each domain focused while allowing work to continue independen
 A portable domain keeps its installation contract in `_SETUP.md`. The setup contract is
 agent-neutral and stays beside the framing and resources it installs.
 
-Human domains use stable usernames. For example, `_workflow/roel/` belongs to `roel`; its
-`AGENTS.md` carries Roel's working framing. Stable usernames keep repository paths independent
-of display names.
+Human domains use stable slug-style usernames made of lowercase letter and digit groups
+separated by single hyphens. The `_workflow/<username>/AGENTS.md` file carries that person's
+working framing. Stable usernames keep repository paths independent of display names.
 
 Precise naming is a core workflow property. Every domain, state file, and concept must say
 exactly who or what it belongs to. Name things as the people working in the repository name
