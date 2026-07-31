@@ -2,8 +2,8 @@
 
 # Authoritah
 
-A small, portable way to structure responsibility around the (coding) agents in your normal
-development workflow.
+An elegant, portable way to structure responsibility around the (coding) agents in your
+normal development workflow.
 
 It is a generic way of working, without harness tooling.
 
