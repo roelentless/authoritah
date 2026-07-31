@@ -1,6 +1,4 @@
-# Authoritah
-
-*Respect the domain.*
+# Workflow model
 
 ## Model
 
