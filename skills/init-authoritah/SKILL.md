@@ -6,8 +6,8 @@ disable-model-invocation: true
 
 # Initialize Authoritah
 
-Apply Authoritah to the repository's real work. Read `../../WORKFLOW.md` for the system
-concepts before proposing a structure.
+Apply Authoritah to the repository's real work. Read `references/WORKFLOW.md` before proposing
+a structure.
 
 ## Procedure
 

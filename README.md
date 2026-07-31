@@ -19,7 +19,7 @@ needs. Domains can represent people, coding agents, recurring processes, or exte
 and programmatic collaborators. Agents load only the context for the domain they are working
 in.
 
-Read [WORKFLOW.md](WORKFLOW.md) for the model.
+Read the [workflow model](skills/init-authoritah/references/WORKFLOW.md).
 
 ## Initialize a repository
 
