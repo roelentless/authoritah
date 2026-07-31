@@ -2,8 +2,10 @@
 
 *Respect the domain.*
 
-A small, portable way to structure responsibility around the coding agents in your normal
+A small, portable way to structure responsibility around the (coding) agents in your normal
 development workflow.
+
+It is a generic way of working, without harness tooling.
 
 Reason about that workflow naturally, in terms of the people, responsibilities, boundaries,
 and handoffs already present.
