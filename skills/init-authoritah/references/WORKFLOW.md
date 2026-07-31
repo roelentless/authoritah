@@ -2,10 +2,10 @@
 
 ## Model
 
-Authoritah organizes responsibility like modular code: related concepts live together in the
-domain that owns them. Each domain defines clear ownership, bounded authority, and the
-context needed to exercise judgment. A domain may represent a person, a local or remote
-coding agent, a recurring process, or an external human or programmatic collaborator.
+Authoritah organizes development context like modular code. Related instructions, working
+state, handoffs, and tools live together in the domain they concern. A domain may represent a
+developer, a local or remote coding agent, a recurring development activity, or an external
+human or programmatic collaborator involved in repository work.
 
 ```text
 _workflow/
@@ -27,26 +27,26 @@ _workflow/
 ```
 
 Each top-level directory is a domain boundary. Its `AGENTS.md` frames the domain's purpose,
-ownership, boundaries, and judgment. Related state, handoffs, and deterministic tools stay
-inside that domain. The framing should be sufficient for a capable model to reason; encode a
-rigid procedure only where mistakes would be costly. Each project creates only the domains
-its work requires.
+boundaries, working context, and judgment. Related state, handoffs, and deterministic tools
+stay inside that domain. The framing should be sufficient for a capable model to reason;
+encode a rigid procedure only where mistakes would be costly. Each project creates only the
+domains its work requires.
 
-Responsibility remains with the domain that owns the outcome. Delegation gives another
-domain a defined task and the authority needed to act without obscuring that ownership. Work
-crossing a domain boundary carries the context and constraints its recipient needs.
+Each domain remains responsible for its development context and working state. When work
+moves between domains, the handoff carries the task, context, and constraints the recipient
+needs. This keeps each domain focused while allowing work to continue independently.
 
 A portable domain keeps its installation contract in `_SETUP.md`. The setup contract is
 agent-neutral and stays beside the framing and resources it installs.
 
-Human domains use stable usernames. For example, `_workflow/roel/` belongs to
-`roel`; its `AGENTS.md` carries Roel's working framing. This identity remains stable as teams
-grow.
+Human domains use stable usernames. For example, `_workflow/roel/` belongs to `roel`; its
+`AGENTS.md` carries Roel's working framing. Stable usernames keep repository paths independent
+of display names.
 
 Precise naming is a core workflow property. Every domain, state file, and concept must say
-exactly who or what owns it. Name things as the people working in the repository name them,
-using the project's own vocabulary. A reader should not need local history to interpret a
-name.
+exactly who or what it belongs to. Name things as the people working in the repository name
+them, using the project's own vocabulary. A reader should not need local history to interpret
+a name.
 
 ## Primitives
 
@@ -68,15 +68,11 @@ Use a command when safety or repeatability requires less freedom than prose prov
 command must validate its inputs and have one narrow responsibility. Allow-list that command,
 not the unrestricted capability beneath it.
 
-The included [`tools/checkpoint/create`](tools/checkpoint/create) command is one optional
-example. It accepts explicit files, refuses a pre-populated Git index, and can therefore be
-approved without allowing arbitrary commits.
-
 ### Asynchronous handoffs
 
-An external human or programmatic collaborator receives its own domain. Work crosses that
-boundary through immutable request and response handoffs, allowing both sides to continue
-asynchronously. Design work is grouped into iterations:
+An external human or programmatic collaborator involved in development work receives its own
+domain. Work crosses that boundary through immutable request and response handoffs, allowing
+both sides to continue asynchronously. Design work is grouped into iterations:
 
 ```text
 handoffs/iteration-N/
@@ -91,6 +87,6 @@ implementation truth and the original request, then return remaining work to `ne
 
 ## Extending the system
 
-Add a domain when related work has distinct ownership or context. Give it one clearly named
-directory and a concise `AGENTS.md`. Add durable state or tools only when that domain has a
-concrete need for them.
+Add a domain when related work has distinct context or working state. Give it one clearly
+named directory and a concise `AGENTS.md`. Add durable state or tools only when that domain
+has a concrete need for them.
