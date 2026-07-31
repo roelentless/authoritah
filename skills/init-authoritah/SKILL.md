@@ -1,6 +1,6 @@
 ---
 name: init-authoritah
-description: Initialize Authoritah from a repository's owners, collaborators, processes, and working state.
+description: Initialize a responsibility-driven agentic workflow by organizing a repository's people, agents, processes, state, and handoffs into Authoritah domains.
 disable-model-invocation: true
 ---
 
