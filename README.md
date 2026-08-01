@@ -38,8 +38,13 @@ For local Authoritah development, link the current checkout instead:
 make install
 ```
 
-Update a GitHub installation with `make -C ~/.local/share/authoritah update`. Local development
-installations use the current checkout directly.
+Installation uses live links to the Authoritah source in `~/.local/share/authoritah`. The global
+initializer and each repository-local runtime skill therefore use the same source; updating that
+checkout upgrades every linked installation.
+
+Update a GitHub installation with `make -C ~/.local/share/authoritah update`. This runs a checked
+`git pull --ff-only` and refuses a dirty checkout. A local development installation already
+follows the current checkout, so it does not pull.
 
 ## Initialize a repository
 
