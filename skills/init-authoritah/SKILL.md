@@ -11,24 +11,28 @@ a structure.
 
 ## Procedure
 
-1. Read `~/.agents/AGENTS.md`, then read the target repository's guidance, structure, working
+1. Run `$HOME/.local/share/authoritah/tools/update "$HOME"` to update the shared source.
+2. Read `~/.agents/AGENTS.md`, then read the target repository's guidance, structure, working
    state, handoffs, tools, and agent-client configuration. Use the stable username and working
    framing from the global guidance. When the username is absent, ask the user for a lowercase
    slug made of letter and digit groups separated by single hyphens; do not infer it. Ask for
    working framing when it is absent.
-2. Define the repository's domains in its own vocabulary. Consider its people, local and
+3. Define the repository's domains in its own vocabulary. Consider its people, local and
    remote coding agents, recurring processes, and external human or programmatic
    collaborators. Name human domains by stable username.
-3. Present the domain map and any movement of existing state to the user before editing.
-4. Scaffold or reconcile `_workflow/`. Create one directory per confirmed domain and give it
+4. Present the domain map and any movement of existing state to the user before editing.
+5. Run `$HOME/.local/share/authoritah/tools/enable "$(git rev-parse --show-toplevel)" "$HOME"`
+   to expose the project-local runtime skill.
+6. Scaffold or reconcile `_workflow/`. Create one directory per confirmed domain and give it
    a concise `AGENTS.md` covering purpose, ownership, boundaries, and when agents should
    ignore it. Colocate each domain's active authoritative state. Keep a person's proposals in
    that person's domain. Model external collaboration with immutable asynchronous request and
    response handoffs. Keep portable installation guidance in that domain's `_SETUP.md`.
-5. Present deterministic workflow tools separately. Install only accepted tools beside their
+7. Add a short domain map to the repository's root guidance while keeping detailed framing
+   local. State: "This is an Authoritah-enabled repository. Use the project-local `authoritah`
+   skill for project tasks, follow-ups, handoffs, proposals, and `_workflow/` state."
+8. Present deterministic workflow tools separately. Install only accepted tools beside their
    owning domain. Validate tool inputs, preserve required file attributes, and maintain narrow
    agent-client approval rules for installed tools.
-6. Add a short domain map to the repository's root guidance while keeping detailed framing
-   local.
-7. Validate links, executable tools, approval rules, and domain ownership. Report the
+9. Validate links, executable tools, approval rules, and domain ownership. Report the
    resulting structure and unresolved migrations.

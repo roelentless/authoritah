@@ -18,6 +18,24 @@ one part of the workflow, so coding agents load only what is relevant.
 
 Read the [workflow model](skills/init-authoritah/references/WORKFLOW.md).
 
+## Install
+
+From GitHub:
+
+```sh
+git clone https://github.com/roelentless/authoritah.git ~/.local/share/authoritah
+make -C ~/.local/share/authoritah install
+```
+
+For local Authoritah development, link the current checkout instead:
+
+```sh
+make install
+```
+
+Update a GitHub installation with `make -C ~/.local/share/authoritah update`. Local development
+installations use the current checkout directly.
+
 ## Initialize a repository
 
 Ask a coding agent:
