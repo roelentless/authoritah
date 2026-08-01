@@ -2,7 +2,7 @@
 set -eu
 
 if [ "$#" -ne 2 ]; then
-  echo "usage: tools/install <source-root> <user-home>" >&2
+  echo "usage: scripts/install <source-root> <user-home>" >&2
   exit 2
 fi
 

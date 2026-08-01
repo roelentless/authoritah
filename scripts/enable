@@ -2,7 +2,7 @@
 set -eu
 
 if [ "$#" -ne 2 ]; then
-  echo "usage: tools/enable <repository> <user-home>" >&2
+  echo "usage: scripts/enable <repository> <user-home>" >&2
   exit 2
 fi
 

@@ -11,7 +11,7 @@ a structure.
 
 ## Procedure
 
-1. Run `$HOME/.local/share/authoritah/tools/update "$HOME"` to update the shared source.
+1. Run `$HOME/.local/share/authoritah/scripts/update "$HOME"` to update the shared source.
 2. Read `~/.agents/AGENTS.md`, then read the target repository's guidance, structure, working
    state, handoffs, tools, and agent-client configuration. Use the stable username and working
    framing from the global guidance. When the username is absent, ask the user for a lowercase
@@ -21,7 +21,7 @@ a structure.
    remote coding agents, recurring processes, and external human or programmatic
    collaborators. Name human domains by stable username.
 4. Present the domain map and any movement of existing state to the user before editing.
-5. Run `$HOME/.local/share/authoritah/tools/enable "$(git rev-parse --show-toplevel)" "$HOME"`
+5. Run `$HOME/.local/share/authoritah/scripts/enable "$(git rev-parse --show-toplevel)" "$HOME"`
    to expose the project-local runtime skill.
 6. Scaffold or reconcile `_workflow/`. Create one directory per confirmed domain and give it
    a concise `AGENTS.md` covering purpose, ownership, boundaries, and when agents should

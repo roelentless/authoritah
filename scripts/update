@@ -2,7 +2,7 @@
 set -eu
 
 if [ "$#" -ne 1 ]; then
-  echo "usage: tools/update <user-home>" >&2
+  echo "usage: scripts/update <user-home>" >&2
   exit 2
 fi
 
