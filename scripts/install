@@ -22,13 +22,15 @@ authoritah_home=$user_home/.local/share/authoritah
 agents_skill=$user_home/.agents/skills/init-authoritah
 claude_skill=$user_home/.claude/skills/init-authoritah
 
-link_directory() {
+preflight_link() {
   target=$1
   link=$2
 
-  mkdir -p "$(dirname "$link")"
   if [ -L "$link" ]; then
-    linked_root=$(cd "$link" && pwd -P)
+    if ! linked_root=$(cd "$link" 2>/dev/null && pwd -P); then
+      echo "install refused broken link: $link" >&2
+      exit 1
+    fi
     target_root=$(cd "$target" && pwd -P)
     if [ "$linked_root" != "$target_root" ]; then
       echo "install refused existing link with another target: $link" >&2
@@ -40,22 +42,42 @@ link_directory() {
     echo "install refused existing path: $link" >&2
     exit 1
   fi
+}
+
+link_directory() {
+  target=$1
+  link=$2
+
+  if [ -L "$link" ]; then
+    if [ "$(readlink "$link")" = "$target" ]; then
+      return
+    fi
+    unlink "$link"
+  fi
+  mkdir -p "$(dirname "$link")"
   ln -s "$target" "$link"
 }
 
 mkdir -p "$(dirname "$authoritah_home")"
 if [ -e "$authoritah_home" ] || [ -L "$authoritah_home" ]; then
-  installed_root=$(cd "$authoritah_home" && pwd -P)
+  if ! installed_root=$(cd "$authoritah_home" 2>/dev/null && pwd -P); then
+    echo "install refused broken Authoritah source: $authoritah_home" >&2
+    exit 1
+  fi
   if [ "$installed_root" != "$source_root" ]; then
     echo "install refused existing Authoritah source: $authoritah_home" >&2
     exit 1
   fi
-else
-  ln -s "$source_root" "$authoritah_home"
 fi
 
+preflight_link "$source_root/skills/init-authoritah" "$agents_skill"
+preflight_link "$source_root/skills/init-authoritah" "$claude_skill"
+
+if [ ! -e "$authoritah_home" ] && [ ! -L "$authoritah_home" ]; then
+  ln -s "$source_root" "$authoritah_home"
+fi
 link_directory "$authoritah_home/skills/init-authoritah" "$agents_skill"
-link_directory "$agents_skill" "$claude_skill"
+link_directory "$authoritah_home/skills/init-authoritah" "$claude_skill"
 
 echo "Authoritah source: $authoritah_home"
 echo "Manual initializer: $agents_skill"

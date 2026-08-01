@@ -48,11 +48,24 @@ follows the current checkout, so it does not pull.
 
 ## Initialize a repository
 
-Ask a coding agent:
+Invoke the initializer explicitly:
 
 ```text
-Use the init-authoritah skill to initialize _workflow in this repository.
+Claude Code: /init-authoritah
+Codex:       $init-authoritah
 ```
+
+The initializer creates `_workflow/`, links the runtime skill into the repository, and adds a
+short backreference to the repository's root agent guidance.
+
+For another clone of an already initialized repository, install Authoritah and run this from the
+repository:
+
+```sh
+make -C ~/.local/share/authoritah enable REPO="$PWD"
+```
+
+This adds only the local runtime-skill links for that clone.
 
 ## License
 

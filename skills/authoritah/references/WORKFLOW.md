@@ -70,11 +70,9 @@ Keep externally managed state in its existing system and reference it when local
 the connection. Use the project's vocabulary for state files. Keep active state and immutable
 external exchanges; remove completed working state.
 
-Task requests follow the language used to make them. The named person, agent, or process selects
-the responsible domain, while a named destination such as a worksheet selects the state file.
-An unqualified task uses the domain's established task state. When none exists, `tasks.md` is the
-recommended default for general actionable work. It is a convention, not a required file; names
-such as `worksheet.md` remain meaningful when they match how the repository works.
+Task state follows the repository's language. `tasks.md` is the recommended default for general
+actionable work, not a required file; names such as `worksheet.md` remain meaningful when they
+match how the repository works. The runtime skill defines task routing.
 
 ### Deterministic tools
 
@@ -87,7 +85,7 @@ not the unrestricted capability beneath it.
 An external human or programmatic collaborator may have a domain when the repository needs to
 manage local context or handoffs for that relationship. Work crosses that boundary through
 immutable request and response handoffs, allowing both sides to continue asynchronously.
-Design work is grouped into iterations:
+Long-running exchanges may be grouped into iterations:
 
 ```text
 handoffs/iteration-N/
@@ -96,9 +94,10 @@ handoffs/iteration-N/
 └── DONE.md    optional reconciliation result
 ```
 
-New work continues in `next/` while a response is pending. A response may address the
-request, introduce independent work, or leave items unresolved. Reconcile it against both
-implementation truth and the original request, then return remaining work to `next/`.
+The `next/` directory holds local work that continues while a response is pending. A response
+may address the request, introduce independent work, or leave items unresolved. Reconcile it
+against both implementation truth and the original request, then return remaining work to
+`next/`.
 
 ## Extending the system
 

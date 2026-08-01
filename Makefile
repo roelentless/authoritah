@@ -1,9 +1,12 @@
-.PHONY: install update
+.PHONY: install update enable
 
-INSTALL_HOME ?= $(HOME)
+REPO ?= $(CURDIR)
 
 install:
-	scripts/install "$(CURDIR)" "$(INSTALL_HOME)"
+	scripts/install "$(CURDIR)" "$(HOME)"
 
 update:
-	scripts/update "$(INSTALL_HOME)"
+	scripts/update "$(HOME)"
+
+enable:
+	scripts/enable "$(REPO)" "$(HOME)"

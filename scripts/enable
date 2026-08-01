@@ -28,13 +28,15 @@ if [ ! -f "$runtime_skill/SKILL.md" ]; then
   exit 1
 fi
 
-link_directory() {
+preflight_link() {
   target=$1
   link=$2
 
-  mkdir -p "$(dirname "$link")"
   if [ -L "$link" ]; then
-    linked_root=$(cd "$link" && pwd -P)
+    if ! linked_root=$(cd "$link" 2>/dev/null && pwd -P); then
+      echo "enable refused broken link: $link" >&2
+      exit 1
+    fi
     target_root=$(cd "$target" && pwd -P)
     if [ "$linked_root" != "$target_root" ]; then
       echo "enable refused existing link with another target: $link" >&2
@@ -46,17 +48,38 @@ link_directory() {
     echo "enable refused existing path: $link" >&2
     exit 1
   fi
+}
+
+link_directory() {
+  target=$1
+  link=$2
+
+  if [ -L "$link" ]; then
+    if [ "$(readlink "$link")" = "$target" ]; then
+      return
+    fi
+    unlink "$link"
+  fi
+  mkdir -p "$(dirname "$link")"
   ln -s "$target" "$link"
 }
 
-link_directory "$runtime_skill" "$agents_skill"
-link_directory "$agents_skill" "$claude_skill"
+preflight_link "$runtime_skill" "$agents_skill"
+preflight_link "$runtime_skill" "$claude_skill"
 
 exclude_file=$(git -C "$repository" rev-parse --git-path info/exclude)
 case "$exclude_file" in
   /*) ;;
   *) exclude_file=$repository/$exclude_file ;;
 esac
+
+if [ ! -f "$exclude_file" ] || [ ! -w "$exclude_file" ]; then
+  echo "enable requires a writable Git exclude file: $exclude_file" >&2
+  exit 1
+fi
+
+link_directory "$runtime_skill" "$agents_skill"
+link_directory "$runtime_skill" "$claude_skill"
 
 for ignored_path in /.agents/skills/authoritah /.claude/skills/authoritah; do
   if ! grep -Fqx "$ignored_path" "$exclude_file"; then

@@ -43,4 +43,12 @@ if git diff --cached --quiet; then
   exit 1
 fi
 
+set +e
 git commit -m "$message"
+commit_status=$?
+set -e
+
+if [ "$commit_status" -ne 0 ]; then
+  git reset -q HEAD -- "$@"
+  exit "$commit_status"
+fi
