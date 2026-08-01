@@ -7,6 +7,8 @@ metadata:
 
 # Manage Authoritah
 
+Follow `references/WORKFLOW.md` when interpreting or changing the workflow structure.
+
 Use `_workflow/` for development work managed through Authoritah. Keep existing local and
 external workflow systems in place and follow an explicitly named destination.
 

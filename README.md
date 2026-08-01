@@ -20,7 +20,7 @@ It layers into a repository's normal development workflow. Existing issue tracke
 systems, and other local or external ways of working remain in place; Authoritah can frame how
 work connects to them without taking them over.
 
-Read the [workflow model](skills/init-authoritah/references/WORKFLOW.md).
+Read the [workflow model](skills/authoritah/references/WORKFLOW.md).
 
 ## Install
 

@@ -2,10 +2,10 @@
 
 ## Model
 
-Authoritah organizes development context like modular code. Instructions, working state,
-handoffs, and tools managed through Authoritah live together in the domain they concern. A
-domain may represent a developer, a local or remote coding agent, a recurring development
-activity, or an external human or programmatic collaborator involved in repository work.
+Authoritah organizes development context like modular code. Instructions, working state, handoffs,
+and tools managed through Authoritah live together in the domain they concern. A domain may
+represent a developer, a local or remote coding agent, a recurring development activity, or an
+external human or programmatic collaborator involved in repository work.
 
 Authoritah is an additive layer in a repository's development workflow. It does not replace
 issue trackers, client systems, agent harnesses, or other local and external ways of working.

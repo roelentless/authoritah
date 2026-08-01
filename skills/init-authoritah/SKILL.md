@@ -6,8 +6,9 @@ disable-model-invocation: true
 
 # Initialize Authoritah
 
-Apply Authoritah to the repository's real work. Read `references/WORKFLOW.md` before proposing
-a structure.
+Bootstrap Authoritah around the repository's real work. Read
+`$HOME/.local/share/authoritah/skills/authoritah/references/WORKFLOW.md` before proposing a
+structure.
 
 ## Procedure
 
@@ -32,8 +33,8 @@ a structure.
    collaboration with immutable asynchronous request and response handoffs when the repository
    needs local exchanges. Keep portable installation guidance in that domain's `_SETUP.md`.
 7. Add a short domain map to the repository's root guidance while keeping detailed framing
-   local. State: "This is an Authoritah-enabled repository. Use `_workflow/` for development
-   work managed through Authoritah."
+   local. State: "This is an Authoritah-enabled repository. Use the project-local `authoritah`
+   skill when working with `_workflow/`."
 8. Present deterministic workflow tools separately. Install only accepted tools beside their
    owning domain. Validate tool inputs, preserve required file attributes, and maintain narrow
    agent-client approval rules for installed tools.
