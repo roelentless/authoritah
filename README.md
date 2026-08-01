@@ -23,6 +23,7 @@ Read the [workflow model](skills/init-authoritah/references/WORKFLOW.md).
 From GitHub:
 
 ```sh
+mkdir -p ~/.local/share
 git clone https://github.com/roelentless/authoritah.git ~/.local/share/authoritah
 make -C ~/.local/share/authoritah install
 ```

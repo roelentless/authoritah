@@ -3,7 +3,7 @@
 This repository owns Authoritah, the portable way to structure responsibility around coding
 agents in a normal development workflow. Read the
 [workflow model](skills/init-authoritah/references/WORKFLOW.md) before changing its structure.
-`examples/checkpoint/create` is an optional reference tool for safe checkpoint creation.
+`examples/tools/checkpoint/create` is an optional reference tool for safe checkpoint creation.
 
 Authoritah is the system name. Use `_workflow/` as its installed project directory.
 

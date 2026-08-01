@@ -1,6 +1,8 @@
 ---
 name: authoritah
 description: Use an Authoritah-enabled repository's workflow for project tasks, follow-ups, handoffs, proposals, and working state.
+metadata:
+  internal: true
 ---
 
 # Use Authoritah
