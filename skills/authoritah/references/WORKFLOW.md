@@ -70,6 +70,12 @@ Keep externally managed state in its existing system and reference it when local
 the connection. Use the project's vocabulary for state files. Keep active state and immutable
 external exchanges; remove completed working state.
 
+Task requests follow the language used to make them. The named person, agent, or process selects
+the responsible domain, while a named destination such as a worksheet selects the state file.
+An unqualified task uses the domain's established task state. When none exists, `tasks.md` is the
+recommended default for general actionable work. It is a convention, not a required file; names
+such as `worksheet.md` remain meaningful when they match how the repository works.
+
 ### Deterministic tools
 
 Use a command when safety or repeatability requires less freedom than prose provides. A

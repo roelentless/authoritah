@@ -31,7 +31,9 @@ structure.
    ignore it. Colocate state created and managed through Authoritah; reference external state
    where it already lives. Keep a person's proposals in that person's domain. Model external
    collaboration with immutable asynchronous request and response handoffs when the repository
-   needs local exchanges. Keep portable installation guidance in that domain's `_SETUP.md`.
+   needs local exchanges. Preserve established names such as `worksheet.md`; use `tasks.md` only
+   as the default for general tasks when no project vocabulary exists. Keep portable installation
+   guidance in that domain's `_SETUP.md`.
 7. Add a short domain map to the repository's root guidance while keeping detailed framing
    local. State: "This is an Authoritah-enabled repository. Use the project-local `authoritah`
    skill when working with `_workflow/`."
