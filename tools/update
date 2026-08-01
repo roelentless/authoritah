@@ -1,0 +1,33 @@
+#!/bin/sh
+set -eu
+
+if [ "$#" -ne 1 ]; then
+  echo "usage: tools/update <user-home>" >&2
+  exit 2
+fi
+
+user_home=$1
+case "$user_home" in
+  /*) ;;
+  *)
+    echo "update requires an absolute user-home path" >&2
+    exit 2
+    ;;
+esac
+
+authoritah_home=$user_home/.local/share/authoritah
+
+if [ -L "$authoritah_home" ]; then
+  echo "Authoritah uses local development source: $(cd "$authoritah_home" && pwd -P)"
+  exit 0
+fi
+if [ ! -d "$authoritah_home/.git" ]; then
+  echo "update requires an Authoritah Git clone: $authoritah_home" >&2
+  exit 1
+fi
+if [ -n "$(git -C "$authoritah_home" status --porcelain)" ]; then
+  echo "update refused dirty Authoritah clone: $authoritah_home" >&2
+  exit 1
+fi
+
+git -C "$authoritah_home" pull --ff-only

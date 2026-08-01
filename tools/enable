@@ -1,0 +1,68 @@
+#!/bin/sh
+set -eu
+
+if [ "$#" -ne 2 ]; then
+  echo "usage: tools/enable <repository> <user-home>" >&2
+  exit 2
+fi
+
+repository=$1
+user_home=$2
+
+case "$repository:$user_home" in
+  /*:/*) ;;
+  *)
+    echo "enable requires absolute repository and user-home paths" >&2
+    exit 2
+    ;;
+esac
+
+repository=$(git -C "$repository" rev-parse --show-toplevel)
+authoritah_home=$user_home/.local/share/authoritah
+runtime_skill=$authoritah_home/skills/authoritah
+agents_skill=$repository/.agents/skills/authoritah
+claude_skill=$repository/.claude/skills/authoritah
+
+if [ ! -f "$runtime_skill/SKILL.md" ]; then
+  echo "enable requires the Authoritah runtime skill: $runtime_skill/SKILL.md" >&2
+  exit 1
+fi
+
+link_directory() {
+  target=$1
+  link=$2
+
+  mkdir -p "$(dirname "$link")"
+  if [ -L "$link" ]; then
+    linked_root=$(cd "$link" && pwd -P)
+    target_root=$(cd "$target" && pwd -P)
+    if [ "$linked_root" != "$target_root" ]; then
+      echo "enable refused existing link with another target: $link" >&2
+      exit 1
+    fi
+    return
+  fi
+  if [ -e "$link" ]; then
+    echo "enable refused existing path: $link" >&2
+    exit 1
+  fi
+  ln -s "$target" "$link"
+}
+
+link_directory "$runtime_skill" "$agents_skill"
+link_directory "$agents_skill" "$claude_skill"
+
+exclude_file=$(git -C "$repository" rev-parse --git-path info/exclude)
+case "$exclude_file" in
+  /*) ;;
+  *) exclude_file=$repository/$exclude_file ;;
+esac
+
+for ignored_path in /.agents/skills/authoritah /.claude/skills/authoritah; do
+  if ! grep -Fqx "$ignored_path" "$exclude_file"; then
+    printf '%s\n' "$ignored_path" >> "$exclude_file"
+  fi
+done
+
+echo "Authoritah enabled: $repository"
+echo "Runtime skill: $agents_skill"

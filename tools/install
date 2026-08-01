@@ -1,0 +1,62 @@
+#!/bin/sh
+set -eu
+
+if [ "$#" -ne 2 ]; then
+  echo "usage: tools/install <source-root> <user-home>" >&2
+  exit 2
+fi
+
+source_root=$1
+user_home=$2
+
+case "$source_root:$user_home" in
+  /*:/*) ;;
+  *)
+    echo "install requires absolute source-root and user-home paths" >&2
+    exit 2
+    ;;
+esac
+
+source_root=$(cd "$source_root" && pwd -P)
+authoritah_home=$user_home/.local/share/authoritah
+agents_skill=$user_home/.agents/skills/init-authoritah
+claude_skill=$user_home/.claude/skills/init-authoritah
+
+link_directory() {
+  target=$1
+  link=$2
+
+  mkdir -p "$(dirname "$link")"
+  if [ -L "$link" ]; then
+    linked_root=$(cd "$link" && pwd -P)
+    target_root=$(cd "$target" && pwd -P)
+    if [ "$linked_root" != "$target_root" ]; then
+      echo "install refused existing link with another target: $link" >&2
+      exit 1
+    fi
+    return
+  fi
+  if [ -e "$link" ]; then
+    echo "install refused existing path: $link" >&2
+    exit 1
+  fi
+  ln -s "$target" "$link"
+}
+
+mkdir -p "$(dirname "$authoritah_home")"
+if [ -e "$authoritah_home" ] || [ -L "$authoritah_home" ]; then
+  installed_root=$(cd "$authoritah_home" && pwd -P)
+  if [ "$installed_root" != "$source_root" ]; then
+    echo "install refused existing Authoritah source: $authoritah_home" >&2
+    exit 1
+  fi
+else
+  ln -s "$source_root" "$authoritah_home"
+fi
+
+link_directory "$authoritah_home/skills/init-authoritah" "$agents_skill"
+link_directory "$agents_skill" "$claude_skill"
+
+echo "Authoritah source: $authoritah_home"
+echo "Manual initializer: $agents_skill"
+echo "Claude initializer: $claude_skill"
