@@ -29,8 +29,8 @@ a structure.
    that person's domain. Model external collaboration with immutable asynchronous request and
    response handoffs. Keep portable installation guidance in that domain's `_SETUP.md`.
 7. Add a short domain map to the repository's root guidance while keeping detailed framing
-   local. State: "This is an Authoritah-enabled repository. Use the project-local `authoritah`
-   skill for project tasks, follow-ups, handoffs, proposals, and `_workflow/` state."
+   local. State: "This is an Authoritah-enabled repository. `_workflow/` is its authoritative
+   project workflow state."
 8. Present deterministic workflow tools separately. Install only accepted tools beside their
    owning domain. Validate tool inputs, preserve required file attributes, and maintain narrow
    agent-client approval rules for installed tools.
