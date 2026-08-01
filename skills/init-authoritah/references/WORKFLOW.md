@@ -2,10 +2,15 @@
 
 ## Model
 
-Authoritah organizes development context like modular code. Related instructions, working
-state, handoffs, and tools live together in the domain they concern. A domain may represent a
-developer, a local or remote coding agent, a recurring development activity, or an external
-human or programmatic collaborator involved in repository work.
+Authoritah organizes development context like modular code. Instructions, working state,
+handoffs, and tools managed through Authoritah live together in the domain they concern. A
+domain may represent a developer, a local or remote coding agent, a recurring development
+activity, or an external human or programmatic collaborator involved in repository work.
+
+Authoritah is an additive layer in a repository's development workflow. It does not replace
+issue trackers, client systems, agent harnesses, or other local and external ways of working.
+A domain may reference work held elsewhere when copying that state would create a competing
+source of truth.
 
 ```text
 _workflow/
@@ -32,9 +37,11 @@ stay inside that domain. The framing should be sufficient for a capable model to
 encode a rigid procedure only where mistakes would be costly. Each project creates only the
 domains its work requires.
 
-Each domain remains responsible for its development context and working state. When work
-moves between domains, the handoff carries the task, context, and constraints the recipient
-needs. This keeps each domain focused while allowing work to continue independently.
+Each domain remains responsible for the development context and working state held within its
+boundary. When work moves between domains, the handoff carries the task, context, and
+constraints the recipient needs. When work moves into an external system, the domain records
+only the local context or handoff the repository needs. This keeps each domain focused while
+allowing work to continue independently.
 
 A portable domain keeps its installation contract in `_SETUP.md`. The setup contract is
 agent-neutral and stays beside the framing and resources it installs.
@@ -58,9 +65,10 @@ context relevant to their work.
 
 ### Working state
 
-Store each fact once in the domain that owns the decision or action it informs. Use the
-project's vocabulary for state files. Keep active state and immutable external exchanges;
-remove completed working state.
+Store Authoritah-managed state in the domain responsible for the decision or action it informs.
+Keep externally managed state in its existing system and reference it when local context needs
+the connection. Use the project's vocabulary for state files. Keep active state and immutable
+external exchanges; remove completed working state.
 
 ### Deterministic tools
 
@@ -70,9 +78,10 @@ not the unrestricted capability beneath it.
 
 ### Asynchronous handoffs
 
-An external human or programmatic collaborator involved in development work receives its own
-domain. Work crosses that boundary through immutable request and response handoffs, allowing
-both sides to continue asynchronously. Design work is grouped into iterations:
+An external human or programmatic collaborator may have a domain when the repository needs to
+manage local context or handoffs for that relationship. Work crosses that boundary through
+immutable request and response handoffs, allowing both sides to continue asynchronously.
+Design work is grouped into iterations:
 
 ```text
 handoffs/iteration-N/

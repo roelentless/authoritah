@@ -6,6 +6,8 @@ agents in a normal development workflow. Read the
 `examples/tools/checkpoint/create` is an optional reference tool for safe checkpoint creation.
 
 Authoritah is the system name. Use `_workflow/` as its installed project directory.
+Authoritah layers into a repository's existing development workflow. Preserve existing local
+and external systems; connect to them instead of duplicating or replacing them.
 
 Keep the system small and responsibility-driven:
 

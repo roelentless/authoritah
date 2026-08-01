@@ -12,9 +12,13 @@ and handoffs already present.
 With clear prompting, this surprisingly simple structure can yield cleaner, better-organized
 agentic development processes.
 
-Authoritah keeps related development context together in clearly named directories, called
-domains. Each domain holds the instructions, working state, handoffs, and optional tools for
-one part of the workflow, so coding agents load only what is relevant.
+Authoritah keeps the development context it manages in clearly named directories, called
+domains. Each domain holds the local instructions, working state, handoffs, and optional tools
+for one part of the workflow, so coding agents load only what is relevant.
+
+It layers into a repository's normal development workflow. Existing issue trackers, client
+systems, and other local or external ways of working remain in place; Authoritah can frame how
+work connects to them without taking them over.
 
 Read the [workflow model](skills/init-authoritah/references/WORKFLOW.md).
 
